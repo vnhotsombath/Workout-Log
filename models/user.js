@@ -2,12 +2,13 @@ const mongoose = require('mongoose');
 
 // Create your User Model
 const userSchema = new mongoose.Schema({
-    userName: String,
-    password: String,
-    location: String,
-    goal: String,
-    bio: String,
-    image: String, 
+    name: String,
+    googleId: {
+        type: String,
+        required: true
+    },
+    email: String,
+    avatar: String
 }, {
     timestamps: true
 });
