@@ -7,8 +7,9 @@ const userSchema = new mongoose.Schema({
     location: String,
     goal: String,
     bio: String,
+    image: String, 
 }, {
     timestamps: true
 });
       
-module.exports = User;
+module.exports = mongoose.model('User', userSchema);
