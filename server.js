@@ -8,7 +8,10 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
+
+
 const indexRoutes = require('./routes/index');
+const usersRouter = require('./routes/users');
 
 
 
@@ -52,6 +55,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
+
 
 
 // invalid request, send 404 page
