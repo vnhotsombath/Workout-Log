@@ -7,7 +7,17 @@
     <title>DangTraining</title>
 </head>
 <body>
-    <h1>Welcome</h1>
-    
+    <h1>Dang Trains</h1>
+    <br>
+    <h3>Track/Train/Or Remain The Same</h3>
+    <br>
+    <br>
+    <h3>WORKOUT LOG</h3>
+    <br>
+    "Simple way to track your workouts"
+    <br>
+    <% routines.forEach(function(r){ %> 
+    <a href='/routines/<%= r._id %>'><input type='submit' value='START TRACKING'></a>
+    <% }); %> 
 </body>
 </html>

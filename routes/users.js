@@ -5,6 +5,7 @@ const isLoggedIn = require('../config/auth');
 
 // get users listing 
 router.get('/new', userController.new);
-router.get('/', userController.index)
+router.get('/', userController.index);
+router.post('/', userController.create);
 
 module.exports= router;

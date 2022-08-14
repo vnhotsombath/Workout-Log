@@ -12,6 +12,7 @@ const methodOverride = require('method-override');
 
 const indexRouter= require('./routes/index');
 const usersRouter = require('./routes/users');
+const routinesRouter = require('./routes/routines');
 
 
 
@@ -56,6 +57,7 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/', routinesRouter);
 
 
 

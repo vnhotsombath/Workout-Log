@@ -3,7 +3,8 @@ const User = require('../models/user');
 
 module.exports = {
     index,
-    new: newUser
+    new: newUser,
+    create
 }
 
 function index(req,res){
@@ -31,4 +32,11 @@ function index(req,res){
 
 function newUser(req, res){
     res.render('users/new.ejs')
+}
+
+function create(req, res){
+    //log out what the function needs
+    console.log(req.body)
+    
+    res.send('Response from the create function')
 }
