@@ -1,6 +1,7 @@
 const express = require('express')
 const router = require('express').Router();
 const passport = require('passport');
+const routine = require('../models/routine');
 
 
 
@@ -36,4 +37,22 @@ router.get('/logout', function(req, res){
   });
 })
 
+/// OTHER ROUTES
+router.get('/', (req, res) =>{
+  res.render('home', {user: req.session.currentUser})
+})
+
+router.get('/profile', isLoggedIn, (req, res) =>{
+  const user = req.session.currentUser
+  User.findById(user._id)
+  .then(info => {
+    routine.find({ userID: user})
+    .then(routine => {
+      res.render('profile', {info, user, routines});
+    })
+  }) .catch(err => {
+    next(err)
+  })
+});
 module.exports = router;
+

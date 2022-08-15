@@ -4,8 +4,8 @@ const userController = require('../controllers/users');
 const isLoggedIn = require('../config/auth');
 
 // get users listing 
-router.get('/new', userController.new);
+router.get('/new', isLoggedIn, userController.new);
 router.get('/', userController.index);
-router.post('/', userController.create);
+router.post('/', isLoggedIn, userController.create);
 
 module.exports= router;
