@@ -57,7 +57,7 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/', routinesRouter);
+app.use('/routines', routinesRouter);
 
 
 

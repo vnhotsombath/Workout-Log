@@ -1,8 +1,11 @@
 const express = require('express');
+const routines = require('../controllers/routines');
 const router = express.Router();
 const routineController = require('../controllers/routines');
 
-router.get('/routines/new', routineController.new);
-router.post('/routines', routineController.create);
+//router.get('/new', routineController.new);
+router.post('/', routineController.create);
+router.get('/:id', routineController.show);
+
 
 module.exports = router;
