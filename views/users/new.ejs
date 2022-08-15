@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('../partials/header') %>
+
     <title>DangTraining</title>
 </head>
 <body>
@@ -15,9 +11,10 @@
     <h3>WORKOUT LOG</h3>
     <br>
     "Simple way to track your workouts"
-    <br>
-    <% routines.forEach(function(r){ %> 
-    <a href='/routines/<%= r._id %>'><input type='submit' value='START TRACKING'></a>
-    <% }); %> 
+    <br> 
+    <a><input type='submit' value='START TRACKING'></a>
+    
 </body>
 </html>
+
+<%- include('../partials/footer') %>

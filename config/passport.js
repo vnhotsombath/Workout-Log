@@ -40,19 +40,19 @@ passport.use(new GoogleStrategy({
 
 //serializeUser returns the data that passport is going to add to the session to track the user. This function is called after the verify callback function ^
 passport.serializeUser(function(user, done) {
-  done(null, user.id); //<-- storing in our session cookie the logged in users id
+  done(null, user._id); //<-- storing in our session cookie the logged in users id
 });
 
 //deserializeUser is called every time a request comes in from a logged in user
 //this is where the passport assigns the user docu to req.user, so in every single function we have acess to req.user which is logged in users mongoose document
-passport.deserializeUser(function(id, done) {
+passport.deserializeUser(function(userId, cb) {
 
   // Find your User, using your model, and then call done(err, whateverYourUserIsCalled)
   // When you call this done function passport assigns the user document to req.user, which will 
   // be availible in every Single controller function, so you always know the logged in user
   User.findById(userId, function(err, userDocument){
-    if(err) return done(err)
-    done(null, userDocument); // <--this assigns the userDocument to req.user = userDocument
+    if(err) return cb(err)
+    cb(null, userDocument); // <--this assigns the userDocument to req.user = userDocument
   })
 
 });
