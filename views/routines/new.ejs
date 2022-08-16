@@ -1,26 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Routines</title>
-</head>
+<%- include('../partials/header') %>
 <body>
-    <h1>USERNAME PROFILE</h1>
-    <div>
-        <h1 class='text-center text primary'>Your Routines</h1>
-        <table class='table'>
+
+
+        <h1>Your Routines</h1>
+        <table>
             <thead>
-                <tr>
+                <tr class='titles'>
                     <th>Routine Name</th>
-                    <th>Routine Description</th>
+                    <th>Description</th>
                     <th>Date Created</th>
                 </tr>
             </thead>
-            
+            <tbody>
+                <% routines.forEach(function(r) { %>
+                    <tr clas='content'>
+                        <td class='routine'><%= r.routine %> </td>
+                        <td class='description'><%= r.description %> </td>
+                        <td class='date'><%= r.date %></td>
+                        </tr>
+                        <% }); %> 
+
+            </tbody>
+ 
 
         </table>
     </div>
 </body>
 </html>
+
+<%- include('../partials/footer') %> 
