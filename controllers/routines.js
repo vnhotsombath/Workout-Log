@@ -21,10 +21,21 @@ module.exports = {
 // }
 
 function create(req, res){
-    console.log(req.body)
+   console.log(req.body)
+   Routine.create(req.body, function (err, routineDoc) {
+    res.redirect('/routines');
+    })
+   }
+    // Routine.create(req.body, function(err, routineDocument){
+    //     if(err) {
+    //         console.log(err, '<--err in the routines create controller');
+    //         return res.render('routines/new.ejs')
+    //     }
+    // })
+    // console.log(routineDocument, '<--routine created in the database')
+    // res.redirect(`/routines/${routineDocument._id}`);
+    // //res.send('Response from the create function for routines')
 
-    res.send('Response from the create function for routines')
-}
 
 function newRoutine(req, res){
     const newRoutine = new Routine();
