@@ -3,6 +3,7 @@ const Routine = require('../models/routine');
 const User = require('../models/user');
 
 module.exports = {
+    index,
     new: newRoutine,
 }
    
@@ -20,8 +21,23 @@ module.exports = {
 //     })
 // }
 
+function index(req, res) {
+    Routine.fing({}, function(err, routineDocument) {
+        console.log(routineDocuments, '<--this is all of the routines');
+        res.render('routines/index', {
+            title: 'All Routines',
+            routines: routineDocument,
+        });
+    });
+};
+
+
 function newRoutine(req, res){
-    res.render('routines/new.ejs')
+    const newRoutine = new Routine();
+    const dt = newRoutine.date;
+    let offset = dt.getTimezoneOffset() * 60000;
+    let localDate = new Date(dt-offset).toISOString();
+    res.render('routines/new', { localDate});
 }
 
 // function show(req, res){

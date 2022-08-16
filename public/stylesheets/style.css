@@ -1,3 +1,29 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: black;
+}
+
+body{
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+  'nav'
+  'main'
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: grey;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+
 .brand-logo {
   margin-left: 15px;
 }
@@ -24,7 +50,4 @@
   justify-content: center;
   align-items: center;
   height: 34px;
-}
-.login img {
-  height: 30px;
 }

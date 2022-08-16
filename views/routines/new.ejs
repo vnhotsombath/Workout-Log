@@ -1,31 +1,25 @@
 <%- include('../partials/header') %>
 <body>
 
-
-        <h1>Your Routines</h1>
-        <table>
-            <thead>
-                <tr class='titles'>
-                    <th>Routine Name</th>
-                    <th>Description</th>
-                    <th>Date Created</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% routines.forEach(function(r) { %>
-                    <tr clas='content'>
-                        <td class='routine'><%= r.routine %> </td>
-                        <td class='description'><%= r.description %> </td>
-                        <td class='date'><%= r.date %></td>
-                        </tr>
-                        <% }); %> 
-
-            </tbody>
- 
-
-        </table>
-    </div>
+<main>
+        <h1>Add Your Routine</h1>
+        <form action='/users' method='POST'>
+            <label>Routine Name:
+            <input type='text' name='name'></label><br>
+            <label>Description:
+                <input type='text' name='description'></label><br>
+            </label>
+            <label>Date:
+                <input
+          value="<%= localDate.slice(0, 16) %>"
+          type="datetime-local"
+          name="departs" />
+            </label>
+            </label>
+                <input type='submit' value='Add Routine'>
+            
+        </form>
 </body>
-</html>
+</main>
 
 <%- include('../partials/footer') %> 
