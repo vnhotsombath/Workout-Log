@@ -1,10 +1,9 @@
-const exercise = require('../models/exercise');
 const Routine = require('../models/routine');
-const User = require('../models/user');
+
 
 module.exports = {
-    index,
     new: newRoutine,
+    create
 }
    
 
@@ -21,16 +20,11 @@ module.exports = {
 //     })
 // }
 
-function index(req, res) {
-    Routine.fing({}, function(err, routineDocument) {
-        console.log(routineDocuments, '<--this is all of the routines');
-        res.render('routines/index', {
-            title: 'All Routines',
-            routines: routineDocument,
-        });
-    });
-};
+function create(req, res){
+    console.log(req.body)
 
+    res.send('Response from the create function for routines')
+}
 
 function newRoutine(req, res){
     const newRoutine = new Routine();
