@@ -2,6 +2,7 @@ const express = require('express')
 const router = require('express').Router();
 const passport = require('passport');
 const routine = require('../models/routine');
+const User = require('../models/user');
 
 
 
@@ -13,7 +14,7 @@ router.get('/', function(req, res) {
   // in the student demo this was res.redirect('/movies'), what do you want?
   // This could be a landing page, or just redirect to your main resource page which you'll have an a tag that makes 
   // a request to `/auth/google` route below
-  res.redirect('/users.ejs')
+  res.redirect('/users')
 });
 
 // Google OAuth login route
@@ -39,7 +40,18 @@ router.get('/logout', function(req, res){
 })
 
 /// OTHER ROUTES
-
+router.get('/profile', (req, res, next) => {
+  const user = req.session.currentUser
+  User.findById(user._id)
+  .then(infor => {
+    routine.find({ userId: user })
+    .then(routines => {
+      res.render('profile', { info, user, routines});
+    })
+  }) .catch(err => {
+    next(err)
+  })
+});
 
 
 module.exports = router;

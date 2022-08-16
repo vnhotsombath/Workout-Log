@@ -7,6 +7,7 @@ const RoutineSchema = new mongoose.Schema({
         type: String,
         required: true},
     description: {type: String},
+    exerciseId: {type: Schema.Types.ObjectId, ref: 'Exercise'},
     date: {type: Date, default: Date.now}
 }, {
     timestamps: true

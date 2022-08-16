@@ -5,7 +5,7 @@ const routineController = require('../controllers/routines');
 
 
 router.get('/new', routineController.new);
-router.post('/routines', routineController.create);
+router.post('/', routineController.create);
 //router.get('/:id', routineController.show);
 
 
