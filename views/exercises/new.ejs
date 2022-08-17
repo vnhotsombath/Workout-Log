@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<select>
+    <% exercises.forEach(function(e) { %>
+        <option> <%= e.name %></option>
+   <% }) %> 
+</select>
+<form id='add-exercise-form' action='/exercises' method='POST'>
+    <label>Name:</label>
+    <input type='text' name='name'>
+    <label>Sets:</label>
+    <input type='text' name='set'>
+    <label>Reps:</label>
+    <input type='text' name='rep'>
+    <label>Weight:</label>
+<input type='text' name='weight'>
+<input type='submit' value='Add Exercise'>
+</form>
+<%-  include('../partials/footer') %> 

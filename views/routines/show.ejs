@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<main>
+    <section id='show-page'>
+        <div>Routine:</div>
+        <div>
+            <%= routine.name %> 
+        </div>
+        <div>Description:</div>
+        <div><%= routine.description %> </div>
+        <div>Exercise:</div>
+        <div><%= routine.exercise %> </div>
+        <div>Sets:</div>
+        <div><%= routine.set %> </div>
+        <div>Reps:</div>
+        <div><%= routine.rep %> </div>
+        <div>Weight:</div>
+        <div><%= routine.weight %> </div>
+        <div>Date Created:</div>
+        <div><%= routine.dateCreated %> </div>
+        <div>Completed</div>
+        <div><%= routine.completed ? 'Yes' : 'No' %> </div>
+
+
+<%- include('../partials/footer') %> 

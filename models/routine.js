@@ -6,12 +6,13 @@ const RoutineSchema = new mongoose.Schema({
     name: {type: String},
     description: {type: String},
     exercise: {type: String},
-    sets: {type: Number, required: true, min:2, max: 900},
-    reps: {type: Number, required: true, min:2, max: 900},
+    set: {type: Number, required: true, min:2, max: 900},
+    rep: {type: Number, required: true, min:2, max: 900},
     weight: {type: Number, required: true, min:2, max: 900},
     dateCreated: {type: Date, default: function(){
         return new Date(new Date().setFullYear(new Date().getFullYear () +1));
-    }}
+    }},
+    completed: {type: Boolean, default: false},
 }, {
     timestamps: true
 });

@@ -39,19 +39,7 @@ router.get('/logout', function(req, res){
   });
 })
 
-/// OTHER ROUTES
-router.get('/profile', (req, res, next) => {
-  const user = req.session.currentUser
-  User.findById(user._id)
-  .then(infor => {
-    routine.find({ userId: user })
-    .then(routines => {
-      res.render('profile', { info, user, routines});
-    })
-  }) .catch(err => {
-    next(err)
-  })
-});
+
 
 
 module.exports = router;

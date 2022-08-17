@@ -2,11 +2,9 @@ const mongoose = require('mongoose');
 
 const ExerciseSchema = new mongoose.Schema ({
     name: {type: String},
-    description: {type: String},
-    sets: {type: Number},
-    reps: {type: Number},
-    weight: {type: Number},
-    routineId: {type: mongoose.Schema.Types.ObjectId, ref: 'Routine'},
+    set: {type: String},
+    rep: {type: String},
+    weight: {type: String},
 }, {
     timestamps: true
 });
