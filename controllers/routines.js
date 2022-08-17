@@ -33,7 +33,7 @@ function index(req,res){
 
 function create(req, res){
    Routine.create(req.body, function (err, routineDoc){
-    res.redirect('/');
+    res.redirect('/routines');
    })
    
     // Routine.create(req.body, function(err, routineDocument){
