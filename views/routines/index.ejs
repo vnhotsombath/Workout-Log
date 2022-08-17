@@ -5,22 +5,28 @@
     <thead>
         <tr class="titles">
             
-            <th>Routine Name</th>
-            <th>Description</th>
-            <th>Date</th>
+            <th>Routine Name:</th>
+            <th>Description:</th>
+            <th>Exercise:</th>
+            <th>Sets:</th>
+            <th>Reps:</th>
+            <th>Weight:</th>
+            <th>Date:</th>
         </tr>
     </thead>
     <tbody>
         <% routines.forEach(function(routine) { %>
             <tr class='content'>
-                <td class='user'><%= routine.user %></td>
-                <td class='routine-name'><%= routine.routine %></td>
+                <td class='name'><%= routine.name %></td>
                 <td class='description'><%= routine.description %></td>
-                <td class='exercise'><%= routine.exercise %></td>
-                <td class='date'><%= routine.date %></td>
+                <td class='exercise'><%= routine.exercise %> </td>
+                <td class='sets'><%= routine.sets %></td>
+                <td class='reps'><%= routine.reps %></td>
+                <td class='weight'><%= routine.weight %> </td>
+                <td class='date-created'><%= routine.dateCreated %></td>
             </tr> 
             <% }); %> 
     </tbody>
 </table>
 
-<%- include('..partials/footer') %> 
+<%- include('../partials/footer') %> 
