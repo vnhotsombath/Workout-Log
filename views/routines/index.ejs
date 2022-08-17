@@ -4,6 +4,7 @@
 <table>
     <thead>
         <tr class="titles">
+            
             <th>Routine Name</th>
             <th>Description</th>
             <th>Date</th>
@@ -12,8 +13,10 @@
     <tbody>
         <% routines.forEach(function(routine) { %>
             <tr class='content'>
+                <td class='user'><%= routine.user %></td>
                 <td class='routine-name'><%= routine.routine %></td>
                 <td class='description'><%= routine.description %></td>
+                <td class='exercise'><%= routine.exercise %></td>
                 <td class='date'><%= routine.date %></td>
             </tr> 
             <% }); %> 

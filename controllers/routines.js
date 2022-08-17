@@ -24,16 +24,24 @@ module.exports = {
 
 function index(req,res){
     Routine.find({}, function(err, routineDocument){
+        if (err) {
+            res.send('you have an error trying to find the routine, check the terminal');
+        }
         res.render('routines/index', {
             title: 'Your Routines',
             routines: routineDocument,
         });
-    })
+    });
 }
 
 function create(req, res){
    Routine.create(req.body, function (err, routineDoc){
-    res.redirect('/routines');
+    if(err){
+        console.log(err, '<--err in the routines create controller');
+        return res.render('routines/new')
+    }
+     console.log(routineDoc, '<--routine created in db');
+     res.redirect('/routines');
    })
    
     // Routine.create(req.body, function(err, routineDocument){
@@ -51,13 +59,21 @@ function newRoutine(req, res){
     const newRoutine = new Routine();
     const dt = newRoutine.date;
     let offset = dt.getTimezoneOffset() * 60000;
-    let localDate = new Date(dt-offset).toISOString();
-    res.render('routines/new', { localDate});
-}
+    // this takes the default date, subtracts the offset and converts to ISO string
+    // set value = 'localDate', and use slice(0,16) to get proper format
+    let localDate = new Date(dt - offset).toISOString();
+    //render the date
+    res.render('routines/new', { localDate });
+};
 
- function show(req, res){
+function show(req, res){
     const newRoutine = new Routine();
     const defaultDate = newRoutine.date;
     let offset = defaultDate.getTimezoneOffset() * 60000;
     let localDate = new Date(defaultDate - offset).toISOString();
+    res.render('routines/show', {
+        title: 'Routines',
+        localDate,
+        routine
+    });
     }
