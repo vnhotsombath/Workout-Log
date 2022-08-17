@@ -1,4 +1,4 @@
-const Exercise = require('../models/excerise');
+const Exercise = require('../models/exercise');
 // const Routine = require('../models/routine');
 
 module.exports = {

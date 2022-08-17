@@ -1,7 +1,7 @@
-const express = require('express')
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const passport = require('passport');
-const routine = require('../models/routine');
+const Routine = require('../models/routine');
 const User = require('../models/user');
 
 
