@@ -3,30 +3,22 @@
 
 <main>
         <h1>Add Your Routine</h1>
-        <form action='/routines' method='POST'>
-            <label>Routine Name:
-            <input type='text' name='name'></label><br>
-            <label>Description:
-                <input type='text' name='description'></label><br>
-            </label>
-            <label>Exercise:
-                <input type='text' name='exercises'>
-            </label><br>
-            <label>Sets:
-            <input type='text' name='sets'></label><br>
-            <label>Reps:
-                <input type='text' name='reps'>
-            </label><br>
-            <label>Weight:
-                <input type='text' name='weight'></label><br>
-            <label>Date:
-                <input type='datetime-local' name='date' />
-            </label><br>
-            <label>Completed:
+        <form id='new-form' action='/routines' method='POST'>
+            <label>Routine Name:</label>
+            <input type='text' name='name'>
+            <label>Exercise:</label>
+            <input type='text' name='exercises'>
+            <label>Sets:</label>
+            <input type='text' name='sets'>
+            <label>Reps:</label>
+            <input type='text' name='reps'>
+            <label>Weight:</label>
+            <input type='text' name='weight'>
+            <label>Date:</label>
+            <input type='datetime-local' name='date' />
+            <label>Completed:</label>
             <input type='checkbox' name='completed' checked></label>
-            </label><br>
-                <input type='submit' value='Add Routine'>
-            
+            <input type='submit' value='Add Routine'>
         </form>
 </body>
 </main>

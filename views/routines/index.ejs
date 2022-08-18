@@ -6,7 +6,6 @@
         <tr class="titles">
             
             <th>Routine Name:</th>
-            <th>Description:</th>
             <th>Exercise:</th>
             <th>Sets:</th>
             <th>Reps:</th>
@@ -19,10 +18,9 @@
         <% routines.forEach(function(routine) { %>
             <tr class='content'>
                 <td class='name'><%= routine.name %></td>
-                <td class='description'><%= routine.description %></td>
                 <td class='exercise'><%= routine.exercise %> </td> 
-                <td class='sets'><%= routine.set %></td>
-                <td class='reps'><%= routine.rep %></td>
+                <td class='set'><%= routine.set %></td>
+                <td class='rep'><%= routine.rep %></td>
                 <td class='weight'><%= routine.weight %> </td>
                 <td class='date-created'><%= routine.dateCreated %></td>
                 <td><%= routine.completed %> </td>

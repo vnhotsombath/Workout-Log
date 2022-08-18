@@ -1,14 +1,12 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const RoutineSchema = new mongoose.Schema({
-    user: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
+const routineSchema = new mongoose.Schema({
+    user: {type: mongoose.Schema.Types.ObjectId, ref: 'User', },
     name: {type: String},
-    description: {type: String},
-    exercise: {type: String},
-    set: {type: Number, required: true, min:2, max: 900},
-    rep: {type: Number, required: true, min:2, max: 900},
-    weight: {type: Number, required: true, min:2, max: 900},
+    exercises: {type: String},
+    sets: {type: String},
+    reps: {type: String},
+    weight: {type: Number},
     dateCreated: {type: Date, default: function(){
         return new Date(new Date().setFullYear(new Date().getFullYear () +1));
     }},
@@ -17,4 +15,4 @@ const RoutineSchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports= mongoose.model('Routine', RoutineSchema);
+module.exports= mongoose.model('Routine', routineSchema);
