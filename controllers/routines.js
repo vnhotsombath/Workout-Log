@@ -7,6 +7,7 @@ module.exports = {
     new: newRoutine,
     create,
     show,
+    edit
     
 }
    
@@ -96,11 +97,11 @@ function show(req, res){
             routine: routineDocs
         });
     });
-    
-    // res.render('routines/show', {
-    //     title: 'Routines',
-    //     localDate,
-    //     routine
-    // });
     };
 
+function edit(req,res) {
+    Routine.findByIdAndUpdate(req.query.id, req.body)
+   res.render('routines/edit', {
+    routine: routineDoc
+   })
+}

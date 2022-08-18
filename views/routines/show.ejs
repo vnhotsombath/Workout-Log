@@ -3,20 +3,23 @@
         <div>Routine:</div>
         <div>
             <%= routine.name %> 
-        </div><br>
+        </div>
         <div>Exercise:</div>
-        <div><%= routine.exercises %> </div><br>
+        <div><%= routine.exercises %> </div>
         <div>Sets:</div>
-        <div><%= routine.sets %> </div><br>
+        <div><%= routine.sets %> </div>
         <div>Reps:</div>
-        <div><%= routine.reps %> </div><br>
+        <div><%= routine.reps %> </div>
         <div>Weight:</div>
-        <div><%= routine.weight %> </div><br>
+        <div><%= routine.weight %> </div>
         <div>Date Created:</div>
-        <div><%= routine.dateCreated %> </div><br>
+        <div><%= routine.dateCreated %> </div>
         <div>Completed</div>
         <div><%= routine.completed ? 'Yes' : 'No' %> </div>
         </section>
+        <br>
+        <form id='new-form' action='/routines' method='GET'></form>
+        <input type='submit' value='Edit Routine'>
 
 
 <%- include('../partials/footer') %> 
