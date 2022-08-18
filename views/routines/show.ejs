@@ -1,32 +1,51 @@
 <%- include('../partials/header') %>
     <section id='show-page'>
-        <div>Routine:</div>
-        <div><%= routine.name %></div>
-        <div>Exercise:</div>
-        <div><%= routine.exercises %> </div>
-        <div>Sets:</div>
-        <div><%= routine.sets %> </div>
-        <div>Reps:</div>
-        <div><%= routine.reps %> </div>
-        <div>Weight:</div>
-        <div><%= routine.weight %> </div>
-        <div>Date Created:</div>
-        <div><%= routine.dateCreated %> </div>
-        <div>Completed</div>
-        <div><%= routine.completed ? 'Yes' : 'No' %> </div>
+        <table id='show-table'>
+            <thead>
+                <h1>Your Routines:</h1>
+        <th>Name:</th>
+        <th>Exercise:</th>
+        <th>Sets:</th>
+        <th>Reps:</th>
+        <th>Weight:</th>
+        <th>Date Created:</th>
+        <th>Completed</th>
+            </tr>
+        <tbody>
+            <tr id='show-table-contents'></tr>
+        <th><%= routine.routineName %></th>
+        
+        <th><%= routine.exercises %></th>
+        
+        <th><%= routine.sets %> </th>
+        
+        <th><%= routine.reps %> </th>
+        
+        <th><%= routine.weight %> </th>
+        
+        <th><%= routine.dateCreated %> </th>
+        
+        <th><%= routine.completed ? 'Yes' : 'No' %> </th>
+        </tr>
+        </tbody>
+    </table>
         </section>
-        <br>
-        <form id='new-form' action='/routines/edit' method='GET'>
-        <input type='submit' value='Edit Routine'></form>
-        <br>
-        <form id='add-to-routine' action='/routines/<%= routine._id %>/exercises' method='POST'>
-        <select name='exerciseId'>
-            <%- exercises.map(e=>
-            `<option value='${e._id}')>${e.name}</option>` 
-            ).join('')%> 
-        </select>
-    <button type='submit'>Add to Routine</button>
-</form>
+        <br><br><br>
+        <form id='add-exercise-form' action='/routines/<%= routine._id %>' method='POST'>
+            <label>Exercise:</label>
+            <input type='text' name='exercises'><br>
+            <label>Sets:</label>
+            <input type='text' name='sets'><br>
+            <label>Reps:</label>
+            <input type='text' name='reps'><br>
+            <label>Weight:</label>
+            <input type='text' name='weight'><br>
+            <label>Date:</label>
+            <input type='datetime-local' name='date' /><br>
+            <label>Completed:</label>
+            <input type='checkbox' name='completed' checked></label><br>
+        <input type='submit' value='Add Exercises'></form>
+        
 
 
 <%- include('../partials/footer') %> 

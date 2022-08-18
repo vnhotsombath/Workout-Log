@@ -1,9 +1,12 @@
 // load the env consts
 require('dotenv').config();
+
+//IMPORT MODULES//
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
+
 // session middleware
 const session = require('express-session');
 const passport = require('passport');
@@ -11,7 +14,7 @@ const methodOverride = require('method-override');
 
 
 const indexRouter= require('./routes/index');
-const usersRouter = require('./routes/users');
+//const usersRouter = require('./routes/users');
 const routinesRouter = require('./routes/routines');
 const exercisesRouter= require('./routes/exercises');
 
@@ -56,9 +59,9 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/routines', routinesRouter);
-app.use('/exercises', exercisesRouter);
+//app.use('/users', usersRouter);
+app.use('/', routinesRouter);
+app.use('/', exercisesRouter);
 
 
 

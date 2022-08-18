@@ -1,23 +1,23 @@
-const User = require('../models/user');
+// const User = require('../models/user');
 
 
-module.exports = {
-    index,
-    new: newUser,
+// module.exports = {
+//     index,
+//     new: newUser,
     
-}
+// }
 
-function index(req,res){
-     User.find({}, function (err, allOfTheUsersInTheDatabase){
-         console.log(allOfTheUsersInTheDatabase, '<--All the users');
-         if (err) {
-             res.send('You have an error, check the terminal');
-         }
-         res.render('users/new.ejs', {
-             users: allOfTheUsersInTheDatabase,
-        });
-     });
- }
+// function index(req,res){
+//      User.find({}, function (err, allOfTheUsersInTheDatabase){
+//          console.log(allOfTheUsersInTheDatabase, '<--All the users');
+//          if (err) {
+//              res.send('You have an error, check the terminal');
+//          }
+//          res.render('users/new.ejs', {
+//              users: allOfTheUsersInTheDatabase,
+//         });
+//      });
+//  }
 
 // async function index(req, res) {
 //     try {
@@ -30,7 +30,7 @@ function index(req,res){
 //     };
 // }
 
-function newUser(req, res){
-    res.render('users/new.ejs')
-}
+// function newUser(req, res){
+//     res.render('users/new.ejs')
+// }
 

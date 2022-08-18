@@ -1,4 +1,5 @@
 const Routine = require('../models/routine');
+const Exercise = require('../models/exercise');
 
 
 
@@ -7,7 +8,7 @@ module.exports = {
     new: newRoutine,
     create,
     show,
-    edit
+    //edit
     
 }
    
@@ -50,12 +51,12 @@ function index(req,res){
 // }
 
 function create(req, res){
-    console.log(req.body)
+    console.log(req.body);
     req.body.completed = !!req.body.completed;
     Routine.create(req.body, function (err, routineDoc){
         if(err){
             console.log(err, '<--err in the routines create controller');
-            return res.render('routines/new')
+            return res.render('routines/new');
         }
          console.log(routineDoc, '<--routine created in db');
          res.redirect(`/routines/${routineDoc._id}`);
@@ -96,9 +97,9 @@ function show(req, res){
     });
     };
 
-function edit(req,res) {
-    Routine.findByIdAndUpdate(req.query.id, req.body)
-   res.render('routines/edit', {
-    routine: routineDoc
-   })
-}
+// function edit(req,res) {
+//     Routine.findByIdAndUpdate(req.query.id, req.body)
+//    res.render('routines/edit', {
+//     routine: routineDoc
+//    })
+// }

@@ -4,5 +4,6 @@
 
 router.get('/exercises/new', exercisesController.new);
 router.post('/exercises', exercisesController.create);
+router.post('/routines/:id/exercises', exercisesController.addToRoutine);
 
 module.exports= router;
