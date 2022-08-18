@@ -12,5 +12,4 @@ router.post('/', isLoggedIn, routinesController.create);
 
 
 
-
 module.exports = router;

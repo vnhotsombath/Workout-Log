@@ -11,9 +11,6 @@ module.exports = {
     
 }
    
-
-
-
 function index(req,res){
     Routine.find({}), function(err, allOfTheRoutinesInTheDatabase){
         console.log(allOfTheRoutinesInTheDatabase, '<--all the routines');

@@ -7,6 +7,9 @@ module.exports = {
 
 function newExercise(req,res){
     Exercise.find({}, function (err, exercises){
-        res.render('exercises/new');
+        res.render('exercises/new', {
+            title: 'Add Exercise',
+            exercises: exercises
+        });
     });
 }

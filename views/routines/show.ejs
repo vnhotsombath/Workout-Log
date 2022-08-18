@@ -1,9 +1,7 @@
 <%- include('../partials/header') %>
     <section id='show-page'>
         <div>Routine:</div>
-        <div>
-            <%= routine.name %> 
-        </div>
+        <div><%= routine.name %></div>
         <div>Exercise:</div>
         <div><%= routine.exercises %> </div>
         <div>Sets:</div>
@@ -18,8 +16,8 @@
         <div><%= routine.completed ? 'Yes' : 'No' %> </div>
         </section>
         <br>
-        <form id='new-form' action='/routines' method='GET'></form>
-        <input type='submit' value='Edit Routine'>
+        <form id='new-form' action='/routines/edit' method='GET'>
+        <input type='submit' value='Edit Routine'></form>
 
 
 <%- include('../partials/footer') %> 
