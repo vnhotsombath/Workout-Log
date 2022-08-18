@@ -2,7 +2,8 @@ const Exercise = require('../models/exercise');
 // const Routine = require('../models/routine');
 
 module.exports = {
-    new: newExercise
+    new: newExercise,
+    create,
 }
 
 function newExercise(req,res){
@@ -11,5 +12,11 @@ function newExercise(req,res){
             title: 'Add Exercise',
             exercises: exercises
         });
+    });
+};
+
+function create(req,res) {
+    Exercise.create(req.body, function (err, exercise) {
+        res.redirect('/exercises/new');
     });
 }

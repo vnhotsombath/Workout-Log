@@ -18,6 +18,15 @@
         <br>
         <form id='new-form' action='/routines/edit' method='GET'>
         <input type='submit' value='Edit Routine'></form>
+        <br>
+        <form id='add-to-routine' action='/routines/<%= routine._id %>/exercises' method='POST'>
+        <select name='exerciseId'>
+            <%- exercises.map(e=>
+            `<option value='${e._id}')>${e.name}</option>` 
+            ).join('')%> 
+        </select>
+    <button type='submit'>Add to Routine</button>
+</form>
 
 
 <%- include('../partials/footer') %> 
