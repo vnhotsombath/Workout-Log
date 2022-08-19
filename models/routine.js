@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 //one routine has many exercises, exercise belongs to a routine
 const exerciseSchema = new mongoose.Schema ({
     name: {type: String},
-    set: {type: String},
-    rep: {type: String},
+    sets: {type: String},
+    reps: {type: String},
     weight: {type: String},
 }, {
     timestamps: true
