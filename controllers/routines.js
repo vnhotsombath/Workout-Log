@@ -110,10 +110,16 @@ function show(req, res){
 //    })
 // }
 
+// function deleteRoutine(req, res){
+//     Routine.findOneAndDelete(
+//         {_id: req.params.id}, function(err){
+//             res.redirect('/routines');
+//         }
+//     );
+// }
+
 function deleteRoutine(req, res){
-    Routine.findOneAndDelete(
-        {_id: req.params.id}, function(err){
-            res.redirect('/routines');
-        }
-    );
+    Routine.findByIdAndRemove(req.params.id, function (err){
+        res.redirect('/routines');
+    });
 }

@@ -9,7 +9,7 @@ router.get('/new', isLoggedIn, routinesController.new);
 router.get('/:id', routinesController.show);
 //router.get('/routines/:id/edit', routinesController.edit);
 router.post('/', isLoggedIn, routinesController.create);
-router.delete('/routines/:id', routinesController.delete);
+router.delete('/:id', routinesController.delete);
 
 
 

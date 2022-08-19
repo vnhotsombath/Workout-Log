@@ -1,4 +1,3 @@
-const routine = require('../models/routine');
 const Routine = require('../models/routine');
 
 
@@ -25,6 +24,18 @@ function create(req, res){
     });
 }
 
+// function deleteExercise(req, res){
+//     Routine.findOne({'exercises._id': req.params.id, 'exercises.user': req.user._id}).then(function(routineDoc){
+//         if (!routineDoc) return res.redirect('/routines');
+//         routineDoc.exercises.remove(req.params.id);
+//         routineDoc.save().then(function (){
+//             res.redirect(`/routines/${routineDoc._id}`);
+//         }) .catch(function (err){
+//             return next(err);
+//         });
+//     });
+// }
+
 function deleteExercise(req, res){
     Routine.findOne({'routines._id': req.params.id},
     function(err, routine) {
@@ -38,9 +49,19 @@ function deleteExercise(req, res){
 
 // async function deleteExercise(req, res){
 //     try {
-//         const routineDocument = await Routine.findByIdAndRemove(req.params.id);
-//         res.redirect(`/routines/${routine._id}`);
-//     } catch(err){
+//         const routineDocument = await RoutinefindOne({
+//             'completedExercise._id': req.params.id,
+//             'completedExercise._user': req.user._id
+//         });
+
+//         if (!routineDocument) return res.redirect('/routines');
+
+//         routineDocument.completedExercise.remove(req.params.id);
+
+//         await routineDocument.save();
+//         res.redirect(`/routines/${routineDocument._id}`)
+
+//     } catch (err) {
 //         res.send(err)
 //     }
 // }

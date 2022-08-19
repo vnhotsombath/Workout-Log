@@ -7,8 +7,8 @@ const exerciseSchema = new mongoose.Schema ({
     reps: {type: String},
     weight: {type: String},
     user: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
-    
-}, {
+}, 
+    {
     timestamps: true
 });
 
