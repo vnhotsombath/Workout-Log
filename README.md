@@ -1,35 +1,49 @@
-# passport-boilerplate
+# Welcome to **Dang Trains**!
+
+### Often times people find themselves unsure of what they will do for a work-out or they are not seeing results. Things go unplanned, the exercises are random and there is no structure. My passion of fitness inspired me to create this web-based app to help others be able to keep track/log their work-outs. 
 
 
-This is your passport boilerplate.
-
-## Setup 
-
-1. Clone the repo
-2. Rename the folder to your Project
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
 
 
-#### Setup your git repo
-0. Setup your `.env` file and add all the things you need! (look at mongoose movies for reference!)
-1. in the project root `git init`
-2. `git add .` to add all the starter code
-3. `git commit -m "setup boilerplate"` 
-4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-5. copy the remote address
-6. In your terminal add the remote `git remote add origin yourGithubRepo'sAddressGoesHere`
-7. `git pull origin main` If a screen pulls up asking you to do something just press `:q` and then `enter` (thats vim btw :) )
-8. `git push origin main`
+# SCREEN SHOTS  
+![](https://i.imgur.com/xseazrg.png)
+![](https://i.imgur.com/WNokYgg.png)
+![](https://i.imgur.com/cgskFZ6.png)
+![](https://i.imgur.com/mKPDL8Y.png)
 
-#### Setup your login (THE APP WON'T WORK until you do, no VIEWS are setup, or the landing route)
+# Technology used: 
+* MongoDb
+* Express
+* Google OAuth
+* BootStrap
+* HTML
+* CSS
+* JavaScript
 
-0. Setup your database connection string
-1. Then Setup Your User Model, 
-2. Follow the steps from the lesson plan to get your Google login credentials for your `.env` file (create the file if you haven't), or you can just copy the ones from earlier if you want to reuse them.
-3. Setup the Code in your config passport 
-4. Setup your callback routes in your `routes/index`
-5. Setup a view and test your login!
+# Wireframe
+[Check out my wireframe](https://whimsical.com/dangtrains-wireframe-BuYUu2bnv93USXYxH6qWra)
 
-#### Make a commit 
+# Planning
+[Trello](https://trello.com/b/LYFwEvUw/dangtrains-workout-log-tracker)
 
-```git commit -m "setup up oauth and User Model"```
+# Future Planning
+* I would like to enhance the page more by adding the User's profile 
+* Add a Community page for all user's to share their stories/comments
+* Add a 'personal coach' option to help indivduals who are having trouble with making a work-out routine,
+* Add 'demo how-to videos' on exercises, stretches
+* Add a work-out timer
+
+# SOURCES
+-[MDN](https://developer.mozilla.org/en-US/)
+
+-[w3schools](https://www.w3schools.com/tags/)
+
+-[HTML SYMBOLS](https://www.htmlsymbols.xyz/games-symbols)
+
+-Google
+
+# ACKNOWLEDGMENT
+- Friends and family who listened to me worry and complain about my errors
+- The classmates who helped and gave motivational advice
+
+The feed-back and guidance helped with the development of this app.
