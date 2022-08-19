@@ -38,7 +38,8 @@ Check out the app [here](https://dangtrains-22.herokuapp.com/)
 
 -[w3schools](https://www.w3schools.com/tags/)
 
--[HTML SYMBOLS](https://www.htmlsymbols.xyz/games-symbols)
+-[IMAGES](https://www.imgur.com)
+
 
 -Google
 
