@@ -38,7 +38,7 @@ Check out the app [here](https://dangtrains-22.herokuapp.com/)
 
 -[w3schools](https://www.w3schools.com/tags/)
 
--[IMAGES](https://www.imgur.com)
+-[IMGUR](https://www.imgur.com)
 
 
 -Google
