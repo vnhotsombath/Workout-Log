@@ -26,6 +26,7 @@
     <td><%= r.dateCreated %> </td>
     <td><%= r.completed ? 'Yes' : 'No' %> </td>
     <td><a href='/routines/<%= r._id %>'>VIEW</a></td>
+    <td><a href='/routines/<%= r._id %>'>EDIT</a></td>
     <td><form action='/routines/<%= r._id %>?_method=DELETE' method='POST'> 
         <button type='submit'>X</button></tr></td>
                     </form>

@@ -1,5 +1,19 @@
 <!--<%- include('../partials/header') %>
 <h1>Edit Routine</h1>
 <form action='/routines/<%= routine._id %>/update?_method=PUT' method='POST'>
-<label></label>
+    <label>Routine Name:</label>
+    <input type='text' name='name'>
+    <label>Exercise:</label>
+    <input type='text' name='exercises'>
+    <label>Sets:</label>
+    <input type='text' name='sets'>
+    <label>Reps:</label>
+    <input type='text' name='reps'>
+    <label>Weight:</label>
+    <input type='text' name='weight'>
+    <label>Date:</label>
+    <input type='datetime-local' name='date' />
+    <label>Completed:</label>
+    <input type='checkbox' name='completed' checked></label>
+    <input type='submit' value='Edit Routine'>
 </form> >

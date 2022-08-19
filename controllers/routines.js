@@ -8,8 +8,9 @@ module.exports = {
     new: newRoutine,
     create,
     show,
-    delete: deleteRoutine
-    //edit
+    delete: deleteRoutine,
+    edit
+    //update
     
 }
    
@@ -123,3 +124,34 @@ function deleteRoutine(req, res){
         res.redirect('/routines');
     });
 }
+
+// function edit(req, res) {
+//     Routine.findById(req.params.id, function(err, routineDocumentCreated) {
+//         res.render('routines/edit.ejs', {
+//             routine: routineDocumentCreated
+//         })
+//     })
+// }
+
+async function edit(req, res) {
+
+    try {
+        const routineDocument = await Routine.findById(req.params.id, req.body)
+        res.render('routines/edit', {
+            routine: routineDocument
+        })
+    } catch(err){
+        res.send(err)
+    }
+}
+
+// async function update(req, res){
+
+//     try {
+//         const routineDocument = await Routine.findByIdAndUpdate(req.params.id, req.body)
+
+//         res.redirect(`/routines/${routineDocument._id}`)
+//     } catch(err){
+//         res.send(err)
+//     }
+// }
