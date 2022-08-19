@@ -6,10 +6,10 @@ Check out the app [here](https://dangtrains-22.herokuapp.com/)
 
 
 # SCREEN SHOTS  
-![](https://i.imgur.com/xseazrg.png)
-![](https://i.imgur.com/WNokYgg.png)
-![](https://i.imgur.com/cgskFZ6.png)
-![](https://i.imgur.com/mKPDL8Y.png)
+![](https://i.imgur.com/yBwNwWX.png)
+![](https://i.imgur.com/d1DyMek.png)
+![](https://i.imgur.com/XQC3reB.png)
+![](https://i.imgur.com/cRGnVJZ.png)
 
 # Technology used: 
 * MongoDb
