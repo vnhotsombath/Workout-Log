@@ -1,32 +1,35 @@
 <%- include('../partials/header') %>
 
-<h2>Your Routines</h2>
-<table>
+    <table id='list'>
+        <thead>
+            <h1>Your Routines:</h1>
     <thead>
-        <tr class="titles">
-            
-            <th>Routine Name:</th>
-            <th>Exercise:</th>
-            <th>Sets:</th>
-            <th>Reps:</th>
-            <th>Weight:</th>
-            <th>Date:</th>
-            <th>Completed:</th>
-        </tr>
+        <tr>
+    <th>Name:</th>
+    <th>Exercise:</th>
+    <th>Sets:</th>
+    <th>Reps:</th>
+    <th>Weight:</th>
+    <th>Date Created:</th>
+    <th>Completed:</th>
+    </tr>
     </thead>
+        
     <tbody>
-        <% routines.forEach(function(routine) { %>
-            <tr class='content'>
-                <td class='name'><%= routine.nameOfRoutine %></td>
-                <td class='exercise'><%= routine.exercises %> </td> 
-                <td class='set'><%= routine.sets %></td>
-                <td class='rep'><%= routine.reps %></td>
-                <td class='weight'><%= routine.weight %> </td>
-                <td class='date-created'><%= routine.dateCreated %></td>
-                <td><%= routine.completed %> </td>
-
-            </tr> 
-            <% }); %> 
+        <% routines.forEach(r => { %>
+        <tr>
+    <td><%= r.name %></td>
+    <td><%= r.exercises %></td>
+    <td><%= r.sets %> </td>
+    <td><%= r.reps %> </td>
+    <td><%= r.weight %> </td>
+    <td><%= r.dateCreated %> </td>
+    <td><%= r.completed ? 'Yes' : 'No' %> </td>
+    <td><a href='/routines/<%= r._id %>'>VIEW</a></td>
+    </tr>
+         
+        <% }) %>
+    
     </tbody>
 </table>
 

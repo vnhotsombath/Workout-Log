@@ -1,33 +1,13 @@
-const Exercise = require('../models/exercise');
 const Routine = require('../models/routine');
-// const Routine = require('../models/routine');
+
 
 module.exports = {
-    new: newExercise,
-    create,
-    addToRoutine
+    create
 }
 
-function newExercise(req,res){
-    Exercise.find({}, function (err, exercises){
-        res.render('exercises/new', {
-            title: 'Add Exercise',
-            exercises: exercises
-        });
-    });
-};
+function create(req, res){
+    console.log(req.params.id, '<---params routine id');
+    console.log(req.body, '<-- contents of the form');
 
-function create(req,res) {
-    Exercise.create(req.body, function (err, exercise) {
-        res.redirect('/exercises/new');
-    });
-}
-
-function addToRoutine(req,res){
-    Routine.findById(req.params.id, function(err, routineDocument){
-        routineDocument.routine.push(req.body.exerciseId);
-        routineDocument.save(function(err){
-            res.redirect(`/routines/${routineDocument._id}`)
-        })
-    })
+    res.redirect(`/routines/${req.params.id}`)
 }

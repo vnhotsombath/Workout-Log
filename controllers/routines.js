@@ -1,5 +1,5 @@
 const Routine = require('../models/routine');
-const Exercise = require('../models/exercise');
+//const Exercise = require('../models/exercise');
 
 
 
@@ -13,14 +13,15 @@ module.exports = {
 }
    
 function index(req,res){
-    Routine.find({}), function(err, allOfTheRoutinesInTheDatabase){
-        console.log(allOfTheRoutinesInTheDatabase, '<--all the routines');
-        if (err){
-            res.send('You have an error, check the terminal')
-        }
+     Routine.find({}, function(err, allOfTheRoutinesInTheDatabase){
+         console.log(allOfTheRoutinesInTheDatabase, '<--all the routines');
+         if (err){
+             res.send('You have an error, check the terminal')
+         }
             res.render('routines/index.ejs', {
             routines: allOfTheRoutinesInTheDatabase    
     });
+});
 };
 
     
@@ -34,7 +35,7 @@ function index(req,res){
     //         routines: routineDocument,
     //     });
     // });
-}
+
 
 
 // function create(req, res){
@@ -59,11 +60,17 @@ function create(req, res){
             return res.render('routines/new');
         }
          console.log(routineDoc, '<--routine created in db');
-         res.redirect(`/routines/${routineDoc._id}`);
+
+         //res.send('Response from the create function for routines')
+         res.redirect('/routines');
        });
+    
+    
+    
    
     // Routine.create(req.body, function (err, routineDoc){
     // res.redirect('/routines');
+   
 };
 
   
@@ -74,9 +81,7 @@ function create(req, res){
     //         return res.render('routines/new.ejs')
     //     }
     // })
-    // console.log(routineDocument, '<--routine created in the database')
-    // res.redirect(`/routines/${routineDocument._id}`);
-    // //res.send('Response from the create function for routines')
+    
 
 
 function newRoutine(req, res){
@@ -84,7 +89,7 @@ function newRoutine(req, res){
 };
 
 function show(req, res){
-    Routine.findById(req.params.id, function(err, routineDocs){
+    Routine.findById(req.params.id, function(err, routineDocument){
     const newRoutine = new Routine();
     const defaultDate = newRoutine.dateCreated;
     const offset = defaultDate.getTimezoneOffset() * 60000;
@@ -92,7 +97,7 @@ function show(req, res){
         res.render('routines/show', {
             title: 'Routines',
             date:  localDate,
-            routine: routineDocs
+            routine: routineDocument
         });
     });
     };
