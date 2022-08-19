@@ -9,9 +9,12 @@
 </head>
 <body>
     <nav>
-        <a href='/users/new'><h1>DANGTRAINS</h1></a> 
+        <a href='/landing'><h1>DANGTRAINS</h1></a> 
+        <% if (user) { %>
         <a href='/routines'>YOUR ROUTINES</a>
-            <a href='/auth/google' class='login'>LOG IN WITH GOOGLE&nbsp;<img src='https://i.imgur.com/FHjYyi0.png'></a>
-            <a href='/logout'>LOG OUT</a>
+        <a href='/logout'>LOG OUT</a>
+        <% } else { %>
+            <a href='/auth/google' class='login'>LOG IN&nbsp;<img src='https://i.imgur.com/FHjYyi0.png'></a>
+          <% } %>  
     </nav>
 <main>
