@@ -2,7 +2,7 @@
 
 ### Often times people find themselves unsure of what they will do for a work-out or they are not seeing results. Things go unplanned, the exercises are random and there is no structure. My passion of fitness inspired me to create this web-based app to help others be able to keep track/log their work-outs. 
 
-
+Check out the app [here](https://dangtrains-22.herokuapp.com/)
 
 
 # SCREEN SHOTS  
