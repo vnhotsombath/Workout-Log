@@ -23,10 +23,10 @@ Check out the app [here](https://dangtrains-22.herokuapp.com/)
 # Wireframe
 [Check out my wireframe](https://whimsical.com/dangtrains-wireframe-BuYUu2bnv93USXYxH6qWra)
 
-# Planning
+# Getting Started
 [Trello](https://trello.com/b/LYFwEvUw/dangtrains-workout-log-tracker)
 
-# Future Planning
+# Next Steps
 * I would like to enhance the page more by adding the User's profile 
 * Add a Community page for all user's to share their stories/comments
 * Add a 'personal coach' option to help indivduals who are having trouble with making a work-out routine,
