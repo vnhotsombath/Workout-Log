@@ -43,7 +43,6 @@ Check out the app [here](https://dangtrains-22.herokuapp.com/)
 -Google
 
 # ACKNOWLEDGMENT
-- Friends and family who listened to me worry and complain about my errors
-- The classmates who helped and gave motivational advice
+- Fellow peers, friends and family who offered feed-back, guidance and positive thoughts!
 
-The feed-back and guidance helped with the development of this app.
+
