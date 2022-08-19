@@ -6,6 +6,8 @@ const exerciseSchema = new mongoose.Schema ({
     sets: {type: String},
     reps: {type: String},
     weight: {type: String},
+    user: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
+    
 }, {
     timestamps: true
 });

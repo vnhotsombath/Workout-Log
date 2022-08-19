@@ -8,6 +8,7 @@ module.exports = {
     new: newRoutine,
     create,
     show,
+    delete: deleteRoutine
     //edit
     
 }
@@ -108,3 +109,11 @@ function show(req, res){
 //     routine: routineDoc
 //    })
 // }
+
+function deleteRoutine(req, res){
+    Routine.findOneAndDelete(
+        {_id: req.params.id}, function(err){
+            res.redirect('/routines');
+        }
+    );
+}
